@@ -44,6 +44,7 @@ public class FileUtils {
         file.transferTo(desc);
     }
 
+
     /**
      * 文件名校验
      *
@@ -76,14 +77,14 @@ public class FileUtils {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if(os!=null){
+            if (os != null) {
                 try {
                     os.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
-            if(fi!=null){
+            if (fi != null) {
                 try {
                     fi.close();
                 } catch (IOException e) {

@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.Date;
 import java.util.List;
 
@@ -82,7 +83,7 @@ public class FileInfoServiceImpl extends ServiceImpl<FileInfoMapper, FileInfo> i
         FileInfo fileInfo = getById(id);
         response.setHeader("content-type", "application/octet-stream");
         response.setContentType("application/octet-stream");        //这边可以设置文件下载时的名字，我这边用的是文件原本的名字，可以根据实际场景设置
-        response.setHeader("Content-Disposition", "attachment;filename=" + fileInfo.getOriName());
+        response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileInfo.getOriName(),"UTF-8"));
         FileUtils.transToStream(fileInfo.getPath(), response.getOutputStream());
     }
 
