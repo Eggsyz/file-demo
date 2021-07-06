@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.35.132:3306/file_db?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+
+logging:
+  level:
+    root: info
+    com.itkezhan.fileserver: debug
+
+file:
+  basedir: C:\workspace\java\src\fileserver\doc
